@@ -1,0 +1,12 @@
+# Compiled source files
+*.o
+*.pyc
+*.db
+*.swp
+*._*
+*.db
+*.log
+*.vho
+xvcSrv
+doxygen/
+ghdl/
