@@ -9,4 +9,4 @@ loadRuckusTcl "$::DIR_PATH/bridge"
 loadRuckusTcl "$::DIR_PATH/dma"
 
 # Load Simulation
-loadSource -lib surf -sim_only -dir "$::DIR_PATH/simlink/sim"
+loadSource -lib -sim_only -dir "$::DIR_PATH/simlink/sim"
