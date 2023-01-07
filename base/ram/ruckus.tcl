@@ -2,18 +2,18 @@
 source $::env(RUCKUS_QUIET_FLAG) $::env(RUCKUS_PROC_TCL)
 
 # Load Source Code
-loadSource -lib -dir "$::DIR_PATH/inferred"
+loadSource -dir "$::DIR_PATH/inferred"
 
 # Check for min. Vivado version with XPM support
 if {  $::env(VIVADO_VERSION) > 2019.1} {
-   loadSource -lib  -dir "$::DIR_PATH/xilinx"
-   loadSource -lib -path "$::DIR_PATH/dummy/SimpleDualPortRamAlteraMfDummy.vhd"
-   loadSource -lib -path "$::DIR_PATH/dummy/TrueDualPortRamXpmAlteraMfDummy.vhd"
+   loadSource  -dir "$::DIR_PATH/xilinx"
+   loadSource -path "$::DIR_PATH/dummy/SimpleDualPortRamAlteraMfDummy.vhd"
+   loadSource -path "$::DIR_PATH/dummy/TrueDualPortRamXpmAlteraMfDummy.vhd"
 
    # https://support.xilinx.com/s/article/67815?language=en_US
    if { $::env(VIVADO_VERSION) >= 2021.2 } {
       set_property XPM_LIBRARIES XPM_MEMORY [current_project]
    }
 } else {
-   loadSource -lib -dir "$::DIR_PATH/dummy"
+   loadSource -dir "$::DIR_PATH/dummy"
 }

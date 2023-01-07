@@ -14,10 +14,7 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
-
-
-library surf;
-use surf.StdRtlPkg.all;
+use work.StdRtlPkg.all;
 
 entity SynchronizerVector is
    generic (
